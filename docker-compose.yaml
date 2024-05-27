@@ -74,6 +74,7 @@ x-airflow-common:
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
+    &airflow-common-volumes
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
@@ -280,6 +281,15 @@ services:
         mlflow server
     ports:
       - "8081:8081"
+
+  jupyter:
+    build: .
+    env_file: .env
+    environment: *airflow-common-env
+    volumes: *airflow-common-volumes
+    command: bash -c "jupyter notebook --ip 0.0.0.0 --no-browser --allow-root"
+    ports:
+      - "8888:8888"
 
   # You can enable flower by adding "--profile flower" option e.g. docker-compose --profile flower up
   # or by explicitly targeted on the command line e.g. docker-compose up flower.
