@@ -21,9 +21,10 @@ DEFAULT_ARGS = {
     # TO-DO: прописать аргументы
 }
 
-dag = DAG(  # TO-DO: прописать аргументы)
+dag = DAG(  # TO-DO: прописать аргументы
+)
 
-    _LOG=logging.getLogger()
+_LOG=logging.getLogger()
 _LOG.addHandler(logging.StreamHandler())
 
 BUCKET =  # TO-DO: your bucket
