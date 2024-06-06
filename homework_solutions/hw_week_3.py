@@ -1,3 +1,5 @@
+# вначале запустить в jupyter скрипт /homework_solutions/hw_week_3_scripts/upload_data_to_pg.py
+# создать таблицу california_housing
 # import io
 # import json
 import logging

@@ -77,8 +77,7 @@ def get_data_from_postgres(**kwargs) -> Dict[str, Any]:
     # your code here.
 
     # TO-DO 4 Postgres: Сохранить данные на S3 в формате pickle в папку {NAME}/datasets/.
-    file
-    name = f"{NAME}/datasets/california_housing.pkl"
+    filename = f"{NAME}/datasets/california_housing.pkl"
     # your code here:
 
 
@@ -90,8 +89,7 @@ def prepare_data(**kwargs) -> Dict[str, Any]:
     # your code here.
 
     # TO-DO 3 S3: Прочитать данные с S3.
-    file
-    name = f"{NAME}/datasets/california_housing.pkl"
+    filename = f"{NAME}/datasets/california_housing.pkl"
     # your code here.
 
     # TO-DO 4 Сделать препроцессинг.
@@ -143,8 +141,7 @@ def save_results(**kwargs) -> None:
     # TO-DO 1 metrics: В этом шаге собрать end_timestamp.
 
     # TO-DO 2: сохранить результаты обучения на S3 в файл {NAME}/results/{date}.json.
-    file
-    name = f"{NAME}/results/{date}.json"
+    filename = f"{NAME}/results/{date}.json"
     # your code here.
 
 
